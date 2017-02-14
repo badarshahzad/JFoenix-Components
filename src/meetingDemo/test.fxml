@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="400.0" minWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="meetingDemo.mainController">
+   <children>
+      <JFXButton fx:id="bt1" layoutX="160.0" layoutY="111.0" text="Button 1" />
+      <JFXTextField fx:id="text" layoutX="121.0" layoutY="62.0" />
+   </children>
+</AnchorPane>
