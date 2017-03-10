@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.MainController">
+   <children>
+      <Pane layoutX="4.0" prefHeight="304.0" prefWidth="343.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXTextField fx:id="user" focusColor="#09b6bc" labelFloat="true" layoutX="55.0" layoutY="101.0" maxWidth="241.0" minWidth="241.0" prefHeight="39.0" prefWidth="241.0" promptText="User name" />
+            <JFXPasswordField fx:id="password" focusColor="#09b6bc" labelFloat="true" layoutX="57.0" layoutY="170.0" maxWidth="247.0" minWidth="228.0" prefHeight="39.0" prefWidth="247.0" promptText="Password" />
+            <JFXButton fx:id="login" buttonType="RAISED" layoutX="57.0" layoutY="244.0" onAction="#makelogin" prefHeight="39.0" prefWidth="65.0" ripplerFill="WHITE" style="-fx-background-color: #f10606;" text="Login" textFill="WHITE" />
+            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="191.0" layoutY="244.0" onAction="#signupnewuser" prefHeight="39.0" prefWidth="72.0" ripplerFill="WHITE" style="-fx-background-color: #f10606;" text="Sign Up" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
