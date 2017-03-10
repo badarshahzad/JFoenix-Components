@@ -1,15 +1,21 @@
 package tabsDemo;
 
+import java.awt.ScrollPane;
 import java.awt.Desktop.Action;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
+import javax.swing.JDialog;
+
+import org.controlsfx.control.HyperlinkLabel;
 import org.tuiofx.widgets.xml.layout.Keyboard;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.Tab;
@@ -21,13 +27,17 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXTabPane;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.skins.JFXTabPaneSkin;
+
+import impl.org.controlsfx.skin.HyperlinkLabelSkin;
 
 public class TabsDemo extends Application {
 
@@ -86,10 +96,15 @@ public class TabsDemo extends Application {
 
 		//------------------------------------------------------ Tabs don't close for JFXTabPane
 		JFXTabPane tabPane = new JFXTabPane();
+		//tabPane.getTabs().remove(this);
+		//JFXTabPaneSkin ob = new JFXTabPaneSkin(tabPane);
+		
+		
+		
 		//tabPane.setTabClosingPolicy(TabClosingPolicy.ALL_TABS);
 		tabPane.setTabClosingPolicy(TabClosingPolicy.SELECTED_TAB);
-		JFXTabPaneSkin tabpane = new JFXTabPaneSkin(tabPane);
-		tabpane.getSkinnable().setTabClosingPolicy(TabPane.TabClosingPolicy.ALL_TABS);
+		//JFXTabPaneSkin tabpane = new JFXTabPaneSkin(tabPane);
+		//tabpane.getSkinnable().setTabClosingPolicy(TabPane.TabClosingPolicy.ALL_TABS);
 		
 		
 		//TabPane tabPane = new TabPane();
@@ -115,6 +130,12 @@ public class TabsDemo extends Application {
 		//vbox.getChildren().addAll(new JFXButton("B1"), new JFXButton("B2"), new JFXButton("B3"), new JFXButton("B4"));
 		Tab tab2 = new Tab();
 		tab2.setText("Tab2");
+		tab2.closableProperty();
+		tab2.onCloseRequestProperty();
+		//tab2.setOnCloseRequest(TAB_CLOSE_REQUEST_EVENT);
+		JFXTabPaneSkin ob;
+		tabPane.getTabClosingPolicy();
+		//tabPane.cl
 		
 		Runnable r1 = new Runnable() {
 			
@@ -140,9 +161,53 @@ public class TabsDemo extends Application {
 		th2.start();
 		//th2.setDaemon(true);
 		
+		VBox box = new VBox();
+	
+		JFXButton bt = new JFXButton("Click");bt.setStyle("-fx-background-color:#fCC2c1;");
+		Stage stage = new Stage();
+		bt.addEventHandler(MouseEvent.MOUSE_CLICKED,(e)->{
+			HBox hbox = new HBox();
+			JFXButton bt1 = new JFXButton("Click 1");bt1.setStyle("-fx-background-color:#fff2c1;");
+			JFXButton bt2 = new JFXButton("Click 2");bt2.setStyle("-fx-background-color:#fff2c1;");
+			JFXButton bt3 = new JFXButton("Click 3");bt3.setStyle("-fx-background-color:#fff2c1;");
+			hbox.getChildren().addAll(bt1,bt2,bt3);hbox.setStyle("-fx-background-color:#321ff3;");
+			/*Scene scen = new Scene(hbox);
+			stage.setScene(scen);
+			stage.setResizable(false);
+			stage.setFullScreen(false);
+			stage.setMaximized(false);
+			stage.setMinHeight(50);
+			stage.setMinWidth(50);
+			stage.show();
+			*/
+			//JDialog stage1 = new JDialog(stage,"Kaka",true);
+			JFXDialog  stage1 = new JFXDialog();
+			stage1.getChildren().add(hbox);
+			stage1.visibleProperty();
+			//stage1.show();
+			
+			
+			
+			//pane.add(stage, 0);
+			
+			
+		});
+		BorderPane borderpane = new BorderPane();
+		borderpane.setTop(bt);
+		borderpane.setCenter(box);
+		tab2.setContent(borderpane);
+		
+		Hyperlink h = new Hyperlink("https://www.google.com");
+		h.addEventHandler(MouseEvent.MOUSE_CLICKED, (e)->{
+			Tab t = new Tab(h.getText());
+			tabPane.getTabs().add(t);
+		});
 		
 		
-
+		//HyperlinkLabelSkin h2 = new HyperlinkLabelSkin(null);
+	//	HyperlinkLabel h1 = new HyperlinkLabel("This is badar shahzad");
+		//tab1.setContent(h);
+	//	tab2.setContent(h1);
 		tabPane.getTabs().addAll(tab1, tab2);
 		tabPane.setPrefSize(800, 600);
 

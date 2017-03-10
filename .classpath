@@ -7,7 +7,6 @@
 	<classpathentry kind="lib" path="/home/badar/Documents/GitHub/DSA Lab Tasks/Testing/lib/responsivefx-0.7.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Documents/GitHub/DSA Lab Tasks/Testing/lib/mysql-connector-java-5.1.38-bin.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Documents/GitHub/DSA Lab Tasks/Testing/lib/kairos-all-0.5.jar"/>
-	<classpathentry kind="lib" path="/home/badar/Documents/GitHub/DSA Lab Tasks/Testing/lib/jfoenix.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Downloads/Softwares/Eclipse Soft/eclipse/junit testing/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Desktop/SEGP/lib/pdfcrowd-2.6-java/pdfcrowd.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Desktop/SEGP/lib/itextpdf/itextpdf-5.5.1-javadoc.jar"/>
@@ -20,5 +19,14 @@
 	<classpathentry kind="lib" path="/home/badar/Desktop/SEGP/lib/htmlTopdfjar/htmlcleaner-2.6.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Desktop/SEGP/lib/htmlTopdfjar/html2image-0.9-javadoc.jar"/>
 	<classpathentry kind="lib" path="/home/badar/Desktop/SEGP/lib/htmlTopdfjar/html2image-0.9.jar"/>
+	<classpathentry kind="lib" path="lib/controlsfx-8.40.11.jar"/>
+	<classpathentry kind="lib" path="lib/jfoenix.jar"/>
+	<classpathentry kind="lib" path="lib/datafx-core-8.0b4.jar"/>
+	<classpathentry kind="lib" path="lib/datafx-flow-8.0b4.jar"/>
+	<classpathentry kind="lib" path="lib/datafx-ui-8.0b4.jar"/>
+	<classpathentry kind="lib" path="lib/flow-8.0.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/core-8.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/core-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/bootstrap.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
